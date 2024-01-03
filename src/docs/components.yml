@@ -39,6 +39,23 @@ components:
         description: fake description
         createdBy: 5ebac534954b54139806c112
 
+    Comment:
+      type: object
+      properties:
+        id:
+          type: string
+        text:
+          type: string
+        postId:
+          type: string
+        userId:
+          type: string
+      example:
+        id: 5ebac534954b54139806c112
+        text: fake comment
+        postId: 6593e3a23febe53db7d97216
+        userId: 6593e3a23febe53db7d97216
+
     Token:
       type: object
       properties:
