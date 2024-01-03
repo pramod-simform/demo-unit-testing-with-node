@@ -46,10 +46,6 @@ const updateCommentById = async (blogId, updateBody) => {
     throw new ApiError(httpStatus.NOT_FOUND, 'Comment not found');
   }
 
-  if (updateBody.title && (await Comment.isBlogExistsWitTitle(updateBody.title, blogId))) {
-    throw new ApiError(httpStatus.BAD_REQUEST, 'Comment already exist with title!');
-  }
-
   Object.assign(comment, updateBody);
   await comment.save();
 
