@@ -14,7 +14,7 @@ describe('catchModelErrors test suite:', () => {
     const fn = jest.fn().mockRejectedValue(err);
 
     const middleware = catchModelErrors(fn);
-    let x = await middleware(req, res, next);
+    await middleware(req, res, next);
     expect(next).toHaveBeenCalledWith(err);
   });
 
